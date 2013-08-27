@@ -39,6 +39,9 @@ describe 'signup' do
      end
     it "should create a user" do
       expect { click_button submit }.to change(User, :count).by(1)
+      describe "after saving the user"  do
+        it { should have_link('sign out') }
+        end
     end
  end
 end
